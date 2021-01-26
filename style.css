@@ -16,6 +16,9 @@ div {
 
 input {
   padding: 2px;
+
+  /* 100% of the parents width */
+  width: 100%;
 }
 
 input,
@@ -29,7 +32,7 @@ input:focus {
 
 button {
   background-color: #007300;
-  border: none;
+  border-color: #444;
   color: whitesmoke;
   margin-top: 1rem;
   max-width: 96px;
@@ -53,7 +56,7 @@ button:hover {
   flex-direction: column;
 
   /* top/bottom 0, and left/right automatically centered */
-  margin: 0 auto;
+  margin: 10vmin auto;
   max-width: 480px;
   padding: 1rem;
 }
@@ -92,4 +95,13 @@ button:hover {
   top: 5px;
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
+}
+
+/* js 'state' classes */
+.is-hidden {
+  display: none;
+}
+
+.is-visible {
+  display: initial;
 }

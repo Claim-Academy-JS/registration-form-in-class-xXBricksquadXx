@@ -24,31 +24,37 @@
         <!-- 'for attribute should match up wit an id attribute for the corresponding input -->
         <label class="screen-reader-text" for="fname">First Name:</label>
         <input type="text" id="fname" placeholder="First name" />
+        <p class="is-hidden">First name is required!</p>
       </div>
 
       <div>
         <label class="screen-reader-text" for="lname">Last Name:</label>
         <input type="text" id="lname" placeholder="Last name" />
+        <p class="is-hidden">Last name is required!</p>
       </div>
 
       <div>
         <label class="screen-reader-text" for="uname">Username:</label>
         <input type="text" id="uname" placeholder="Username" />
+        <p class="is-hidden">Username is required!</p>
       </div>
 
       <div>
         <label class="screen-reader-text" for="password">Password:</label>
         <input type="password" id="pass" placeholder="Password" />
+        <p class="is-hidden">Password is required!</p>
       </div>
 
       <div>
         <label class="screen-reader-text" for="email">Email:</label>
         <input type="email" id="email" placeholder="📧" />
+        <p class="is-hidden">This doesnt look like an Email!</p>
       </div>
 
       <div>
         <label class="screen-reader-text" for="tel">☎️</label>
         <input type="tel" id="phone" placeholder="☎️" />
+        <p class="is-hidden">This doesnt look like an Number!</p>
       </div>
 
       <button type="submit">Register!</button>
