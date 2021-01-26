@@ -32,7 +32,7 @@ input:focus {
 
 button {
   background-color: #007300;
-  border-color: #444;
+  border-color: #fff;
   color: whitesmoke;
   margin-top: 1rem;
   max-width: 96px;
@@ -44,14 +44,16 @@ button {
 
 /* 'hover' and 'focus' should be used together for accessibility ♿ */
 button:focus,
-button:hover {
+button:hover,
+button:active {
   background-color: #00e36c;
   color: #333;
   cursor: pointer;
+  transform: translateY(4px);
 }
 
 .card {
-  background: #fff;
+  background: dodgerblue;
   display: flex;
   flex-direction: column;
 
@@ -59,6 +61,22 @@ button:hover {
   margin: 10vmin auto;
   max-width: 480px;
   padding: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--justify-between {
+  justify-content: space-between;
 }
 
 .rounded {
@@ -105,3 +123,5 @@ button:hover {
 .is-visible {
   display: initial;
 }
+
+/* keyframes */

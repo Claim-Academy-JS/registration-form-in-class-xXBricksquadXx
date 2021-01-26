@@ -48,16 +48,18 @@
       <div>
         <label class="screen-reader-text" for="email">Email:</label>
         <input type="email" id="email" placeholder="📧" />
-        <p class="is-hidden">This doesnt look like an Email!</p>
+        <p class="is-hidden">This doesn't look like an Email!</p>
       </div>
 
       <div>
         <label class="screen-reader-text" for="tel">☎️</label>
         <input type="tel" id="phone" placeholder="☎️" />
-        <p class="is-hidden">This doesnt look like an Number!</p>
+        <p class="is-hidden">This doesn't look like an Number!</p>
       </div>
-
-      <button type="submit">Register!</button>
+      <div class="flex flex--align-center flex--justify-between">
+        <button type="submit">Register!</button>
+        <button id="toggle-Btn" type="button">Already have an account</button>
+      </div>
     </form>
 
     <script src="./scripts.js" type="module"></script>
