@@ -1,3 +1,185 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: url("https://i.pinimg.com/originals/de/28/7a/de287a55dca04db46effe7ab1f14f0ab.jpg");
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  color: whitesmoke;
+  text-align: center;
+  text-shadow: 4px 2px #c31432;
+}
+
+div {
+  margin: 0.5rem 0;
+}
+
+input {
+  padding: 2px;
+
+  /* 100% of the parent's width */
+  width: 100%;
+}
+
+input,
+button {
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button[type="submit"] {
+  background: linear-gradient(to left, #c31432, #240b36);
+  color: whitesmoke;
+  max-width: 96px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+
+  /* Transition all properties over 0.2s using an 'ease' timing function. */
+  transition: all 0.2s ease;
+}
+
+button,
+
+/* Attribute Selectors */
+button[type="submit"]:focus,
+button[type="submit"]:hover {
+  color: black;
+}
+button:active,
+button:focus,
+button:hover,
+button[type="submit"]:active,
+button[type="submit"]:focus,
+button[type="submit"]:hover {
+  box-shadow: 0 5px #666;
+  color: whitesmoke;
+  cursor: pointer;
+  transform: translateY(4px);
+}
+
+/* 'hover' and 'focus' should be used together for accessibility ♿ */
+button[type="submit"]:focus,
+button[type="submit"]:hover {
+  background-color: #00e36c;
+}
+
+.card {
+  animation-duration: 0.75s;
+  animation-name: bounceIn;
+  background: rgba(255, 255, 255, 0.25);
+
+  /* x-offset y-offset blur radius */
+  box-shadow: 1px 1px 10vmax 0.25rem linear-gradient(to left, #c31432, #240b36);
+
+  /* top/bottom 10% of the whichever viewport is the minimum (portait/landscape) */
+  margin: 10vmin auto;
+  max-width: 320px;
+  padding: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--justify-between {
+  justify-content: space-between;
+}
+
+.rounded {
+  /* Rounded corners */
+  border-radius: 0.75rem;
+}
+
+/* Copied/pasted from CSS Tricks */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
+/* JS 'State' Classes */
+.is-hidden {
+  display: none;
+}
+
+.is-visible {
+  display: initial;
+}
+
+/* Keyframes */
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
 }
