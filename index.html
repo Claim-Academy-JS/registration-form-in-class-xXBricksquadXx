@@ -9,28 +9,36 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css"
     />
 
-    <!-- TODO: Add some Google Fonts -->
-
     <link rel="stylesheet" href="style.css" />
 
-    <!-- TODO: Update '<title>'. -->
     <title>Registration Form</title>
   </head>
   <body>
     <h1>Registration Form</h1>
 
-    <form class="card rounded">
+    <form class="card flex flex--column rounded">
       <div>
-        <!-- 'for attribute should match up wit an id attribute for the corresponding input -->
+        <!-- 'for' attribute should match up with an id attribute for the corresponding input -->
         <label class="screen-reader-text" for="fname">First Name:</label>
-        <input type="text" id="fname" placeholder="First name" />
+        <input type="text" id="fname" placeholder="First Name" />
         <p class="is-hidden">First name is required!</p>
       </div>
 
       <div>
         <label class="screen-reader-text" for="lname">Last Name:</label>
-        <input type="text" id="lname" placeholder="Last name" />
+        <input type="text" id="lname" placeholder="Last Name" />
         <p class="is-hidden">Last name is required!</p>
+      </div>
+
+      <div>
+        <label class="screen-reader-text" for="email">Email: </label>
+        <input type="email" id="email" placeholder="✉️" />
+        <p class="is-hidden">This doesn't look like an ✉️ address</p>
+      </div>
+
+      <div>
+        <label class="screen-reader-text" for="phone">☎️:</label>
+        <input type="tel" id="phone" placeholder="☎️" />
       </div>
 
       <div>
@@ -41,24 +49,12 @@
 
       <div>
         <label class="screen-reader-text" for="password">Password:</label>
-        <input type="password" id="pass" placeholder="Password" />
-        <p class="is-hidden">Password is required!</p>
+        <input type="password" id="password" placeholder="Password" />
       </div>
 
-      <div>
-        <label class="screen-reader-text" for="email">Email:</label>
-        <input type="email" id="email" placeholder="📧" />
-        <p class="is-hidden">This doesn't look like an Email!</p>
-      </div>
-
-      <div>
-        <label class="screen-reader-text" for="tel">☎️</label>
-        <input type="tel" id="phone" placeholder="☎️" />
-        <p class="is-hidden">This doesn't look like an Number!</p>
-      </div>
       <div class="flex flex--align-center flex--justify-between">
         <button type="submit">Register!</button>
-        <button id="toggle-Btn" type="button">Already have an account</button>
+        <button id="toggle-btn" type="button">Already have an account?</button>
       </div>
     </form>
 
