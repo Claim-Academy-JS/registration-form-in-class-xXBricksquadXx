@@ -17,7 +17,7 @@ div {
 input {
   padding: 2px;
 
-  /* 100% of the parents width */
+  /* 100% of the parent's width */
   width: 100%;
 }
 
@@ -30,36 +30,54 @@ input:focus {
   outline: none;
 }
 
-button {
+button[type="submit"] {
   background-color: #007300;
-  border-color: #fff;
   color: whitesmoke;
-  margin-top: 1rem;
   max-width: 96px;
+}
+
+button {
+  background: none;
+  border: none;
   padding: 0.5rem;
 
   /* Transition all properties over 0.2s using an 'ease' timing function. */
   transition: all 0.2s ease;
 }
 
-/* 'hover' and 'focus' should be used together for accessibility ♿ */
+button,
+
+/* Attribute Selectors */
+button[type="submit"]:focus,
+button[type="submit"]:hover {
+  color: #000;
+}
+
 button:focus,
 button:hover,
-button:active {
-  background-color: #00e36c;
+button[type="submit"]:focus,
+button[type="submit"]:hover {
   color: #333;
   cursor: pointer;
-  transform: translateY(4px);
+}
+
+/* 'hover' and 'focus' should be used together for accessibility ♿ */
+button[type="submit"]:focus,
+button[type="submit"]:hover {
+  background-color: #00e36c;
 }
 
 .card {
-  background: dodgerblue;
-  display: flex;
-  flex-direction: column;
+  animation-duration: 0.75s;
+  animation-name: bounceIn;
+  background: rgba(255, 255, 255, 0.75);
 
-  /* top/bottom 0, and left/right automatically centered */
+  /* x-offset y-offset blur radius */
+  box-shadow: 1px 1px 10vmax 0.25rem rgba(255, 218, 135, 0.5);
+
+  /* top/bottom 10% of the whichever viewport is the minimum (portait/landscape) */
   margin: 10vmin auto;
-  max-width: 480px;
+  max-width: 320px;
   padding: 1rem;
 }
 
@@ -115,7 +133,7 @@ button:active {
   z-index: 100000; /* Above WP toolbar. */
 }
 
-/* js 'state' classes */
+/* JS 'State' Classes */
 .is-hidden {
   display: none;
 }
@@ -124,4 +142,41 @@ button:active {
   display: initial;
 }
 
-/* keyframes */
+/* Keyframes */
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
