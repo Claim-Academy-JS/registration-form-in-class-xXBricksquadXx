@@ -1,27 +1,29 @@
+const alreadyMsg = "Already have an account?";
+const needMsg = "Need to create an account?";
+
 const submitBtn = document.querySelector('button[type="submit"]');
 const toggleBtn = document.querySelector("#toggle-btn");
 
-const toggledInputs = Array.from(document.querySelectorAll("input")).slice(
-  0,
-  4
+const toggledInputs = Array.from(document.querySelectorAll("input")).filter(
+  (input) => input.id !== "uname" && input.id !== "password"
 );
 
-toggleBtn.addEventListener("click", function () {
-  if (this.innerText === "Already have an account?") {
-    for (let i = 0; i < toggledInputs.length; i += 1) {
-      toggledInputs[i].classList.remove("is-visible");
-      toggledInputs[i].classList.add("is-hidden");
+function toggleFormInfo() {
+  toggledInputs.forEach((toggledInput) => {
+    if (toggleBtn.innerText === alreadyMsg) {
+      toggledInput.classList.replace("is-visible", "is-hidden") ||
+        toggledInput.classList.add("is-hidden");
+    } else {
+      toggledInput.classList.replace("is-hidden", "is-visible");
     }
-    this.innerText = "Need to create an account?";
-    submitBtn.innerText = "Login!";
-  } else {
-    const hiddenInputs = document.querySelectorAll("input.is-hidden");
-    for (let i = 0; i < hiddenInputs.length; i += 1) {
-      toggledInputs[i].classList.remove("is-hidden");
-      hiddenInputs[i].classList.add("is-visible");
-    }
+  });
 
-    this.innerText = "Already have an account?";
-    submitBtn.innerText = "Register!";
-  }
-});
+  toggleBtn.innerText =
+    toggleBtn.innerText === alreadyMsg ? needMsg : alreadyMsg;
+
+  submitBtn.innerText = submitBtn.innerText.includes("Login")
+    ? "Register!"
+    : "Login!";
+}
+
+toggleBtn.addEventListener("click", toggleFormInfo);
