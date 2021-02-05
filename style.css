@@ -144,6 +144,7 @@ button[type="submit"]:hover {
 }
 
 .is-hidden {
+  /* TODO: Add some animation such as bounceOut from animate.css */
   display: none;
 }
 
@@ -152,6 +153,8 @@ button[type="submit"]:hover {
 }
 
 .is-visible {
+  animation-duration: 0.75s;
+  animation-name: bounceIn;
   display: block;
 }
 
