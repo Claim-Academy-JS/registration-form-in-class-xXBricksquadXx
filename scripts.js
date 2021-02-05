@@ -14,7 +14,7 @@ const toggledInputDivs = Array.from(document.querySelectorAll("div")).filter(
   }
 );
 
-inputs.forEach((input) =>
+inputs.forEach((input) => {
   input.addEventListener("blur", function handleBlur() {
     if (this.value.length) {
       this.classList.replace("is-error", "is-valid") ||
@@ -23,8 +23,12 @@ inputs.forEach((input) =>
       this.classList.replace("is-valid", "is-error") ||
         this.classList.add("is-error");
     }
-  })
-);
+  });
+
+  input.addEventListener("focus", function handleFocus() {
+    this.classList.remove("is-error", "is-valid");
+  });
+});
 
 function toggleFormInfo() {
   toggledInputDivs.forEach((toggledInputDiv) => {
