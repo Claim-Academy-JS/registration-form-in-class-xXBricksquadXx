@@ -38,12 +38,13 @@ inputs.forEach((input) => {
       this.classList.replace("is-error", "is-valid") ||
         this.classList.add("is-valid");
 
-      this.nextElementSibling.classList.replace("is-visible", "is-hidden");
+      // Use optional chaining to prevent error if there is no 'nextElementSibling'
+      this.nextElementSibling?.classList.replace("is-visible", "is-hidden");
     } else {
       this.classList.replace("is-valid", "is-error") ||
         this.classList.add("is-error");
 
-      this.nextElementSibling.classList.replace("is-hidden", "is-visible");
+      this.nextElementSibling?.classList.replace("is-hidden", "is-visible");
     }
   });
 
@@ -53,3 +54,9 @@ inputs.forEach((input) => {
 });
 
 toggleBtn.addEventListener("click", toggleFormInfo);
+
+document.querySelector("form").addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  console.log(event.target.elements);
+});
