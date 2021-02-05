@@ -14,6 +14,24 @@ const toggledInputDivs = Array.from(document.querySelectorAll("div")).filter(
   }
 );
 
+function toggleFormInfo() {
+  toggledInputDivs.forEach((toggledInputDiv) => {
+    if (toggleBtn.innerText === alreadyMsg) {
+      toggledInputDiv.classList.replace("is-visible", "is-hidden") ||
+        toggledInputDiv.classList.add("is-hidden");
+    } else {
+      toggledInputDiv.classList.replace("is-hidden", "is-visible");
+    }
+  });
+
+  toggleBtn.innerText =
+    toggleBtn.innerText === alreadyMsg ? needMsg : alreadyMsg;
+
+  submitBtn.innerText = submitBtn.innerText.includes("Login")
+    ? "Register!"
+    : "Login!";
+}
+
 inputs.forEach((input) => {
   input.addEventListener("blur", function handleBlur() {
     if (this.value.length) {
@@ -33,23 +51,5 @@ inputs.forEach((input) => {
     this.classList.remove("is-error", "is-valid");
   });
 });
-
-function toggleFormInfo() {
-  toggledInputDivs.forEach((toggledInputDiv) => {
-    if (toggleBtn.innerText === alreadyMsg) {
-      toggledInputDiv.classList.replace("is-visible", "is-hidden") ||
-        toggledInputDiv.classList.add("is-hidden");
-    } else {
-      toggledInputDiv.classList.replace("is-hidden", "is-visible");
-    }
-  });
-
-  toggleBtn.innerText =
-    toggleBtn.innerText === alreadyMsg ? needMsg : alreadyMsg;
-
-  submitBtn.innerText = submitBtn.innerText.includes("Login")
-    ? "Register!"
-    : "Login!";
-}
 
 toggleBtn.addEventListener("click", toggleFormInfo);
