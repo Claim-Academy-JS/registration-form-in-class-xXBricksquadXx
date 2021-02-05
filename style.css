@@ -21,6 +21,11 @@ input {
   width: 100%;
 }
 
+input + p {
+  color: #c31432;
+  margin: 4px 0 0 0;
+}
+
 input,
 button {
   border-radius: 4px;
@@ -52,16 +57,13 @@ button[type="submit"]:focus,
 button[type="submit"]:hover {
   color: black;
 }
-button:active,
+
 button:focus,
 button:hover,
-button[type="submit"]:active,
 button[type="submit"]:focus,
 button[type="submit"]:hover {
-  box-shadow: 0 5px #666;
   color: whitesmoke;
   cursor: pointer;
-  transform: translateY(4px);
 }
 
 /* 'hover' and 'focus' should be used together for accessibility ♿ */
@@ -137,12 +139,23 @@ button[type="submit"]:hover {
 }
 
 /* JS 'State' Classes */
+.is-error {
+  border: solid thin red;
+}
+
 .is-hidden {
+  /* TODO: Add some animation such as bounceOut from animate.css */
   display: none;
 }
 
+.is-valid {
+  border: solid 2px green;
+}
+
 .is-visible {
-  display: initial;
+  animation-duration: 0.75s;
+  animation-name: bounceIn;
+  display: block;
 }
 
 /* Keyframes */
