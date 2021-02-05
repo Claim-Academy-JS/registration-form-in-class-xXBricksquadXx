@@ -52,16 +52,13 @@ button[type="submit"]:focus,
 button[type="submit"]:hover {
   color: black;
 }
-button:active,
+
 button:focus,
 button:hover,
-button[type="submit"]:active,
 button[type="submit"]:focus,
 button[type="submit"]:hover {
-  box-shadow: 0 5px #666;
   color: whitesmoke;
   cursor: pointer;
-  transform: translateY(4px);
 }
 
 /* 'hover' and 'focus' should be used together for accessibility ♿ */
@@ -137,8 +134,16 @@ button[type="submit"]:hover {
 }
 
 /* JS 'State' Classes */
+.is-error {
+  border: solid thin red;
+}
+
 .is-hidden {
   display: none;
+}
+
+.is-valid {
+  border: solid 2px green;
 }
 
 .is-visible {
