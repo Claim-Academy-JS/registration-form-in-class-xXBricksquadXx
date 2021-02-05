@@ -4,17 +4,17 @@ const needMsg = "Need to create an account?";
 const submitBtn = document.querySelector('button[type="submit"]');
 const toggleBtn = document.querySelector("#toggle-btn");
 
-const toggledInputs = Array.from(document.querySelectorAll("input")).filter(
+const toggledInputDivs = Array.from(document.querySelectorAll("input")).filter(
   (input) => input.id !== "uname" && input.id !== "password"
 );
 
 function toggleFormInfo() {
-  toggledInputs.forEach((toggledInput) => {
+  toggledInputDivs.forEach((toggledInputDiv) => {
     if (toggleBtn.innerText === alreadyMsg) {
-      toggledInput.classList.replace("is-visible", "is-hidden") ||
-        toggledInput.classList.add("is-hidden");
+      toggledInputDiv.classList.replace("is-visible", "is-hidden") ||
+        toggledInputDiv.classList.add("is-hidden");
     } else {
-      toggledInput.classList.replace("is-hidden", "is-visible");
+      toggledInputDiv.classList.replace("is-hidden", "is-visible");
     }
   });
 
