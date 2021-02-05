@@ -4,8 +4,13 @@ const needMsg = "Need to create an account?";
 const submitBtn = document.querySelector('button[type="submit"]');
 const toggleBtn = document.querySelector("#toggle-btn");
 
-const toggledInputDivs = Array.from(document.querySelectorAll("input")).filter(
-  (input) => input.id !== "uname" && input.id !== "password"
+const toggledInputDivs = Array.from(document.querySelectorAll("div")).filter(
+  (div) => {
+    const input = div.querySelector("input");
+
+    // Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+    return input?.id !== "uname" && input?.id !== "password";
+  }
 );
 
 function toggleFormInfo() {
